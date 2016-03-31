@@ -22,8 +22,15 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func main() {
+	r.HandleFunc("/internal", handlers.RedirectPageHandler)
+
+	r.HandleFunc("/login", loginHandler).Methods("POST")
+	r.HandleFunc("/logout", logoutHandler).Methods("POST")
+
+	http.Handle("/", r)
+
+
 	r := mux.NewRouter()
-	r.HandleFunc("/callback", callback.CallbackHandler)
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 	http.Handle("/",  http.FileServer(http.Dir("./html")))
 	r.HandleFunc("/login", handlers.LoginHandler)
