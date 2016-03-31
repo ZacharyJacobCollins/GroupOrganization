@@ -3,7 +3,6 @@ package handlers
 import (
 	"net/http"
 	"html/template"
-
 	"github.com/zacharyjacobcollins/GroupOrganization/models"
 )
 

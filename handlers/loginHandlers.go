@@ -31,10 +31,6 @@ var cookieGenerator = securecookie.New(
 	securecookie.GenerateRandomKey(32))
 
 
-func LoginPageHandler(response http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(response, indexPage)
-}
-
 func LoginHandler(response http.ResponseWriter, request *http.Request) {
 	name := request.FormValue("name")
 	pass := request.FormValue("password")
