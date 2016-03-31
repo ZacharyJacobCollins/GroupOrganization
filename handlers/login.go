@@ -1,13 +1,15 @@
-//TODO change get username to get user
-
-
-package handlers
+package main
 
 import (
+	"fmt"
 	"github.com/gorilla/securecookie"
 	"net/http"
-	"fmt"
 )
+
+var cookieHandler = securecookie.New(
+	securecookie.GenerateRandomKey(64),
+	securecookie.GenerateRandomKey(32))
+
 
 const indexPage = `
  <h1>Login</h1>
@@ -20,6 +22,10 @@ const indexPage = `
  </form>
  `
 
+func indexPageHandler(response http.ResponseWriter, request *http.Request) {
+	fmt.Fprintf(response, indexPage)
+}
+
 const internalPage = `
  <h1>Internal</h1>
  <hr>
@@ -29,10 +35,14 @@ const internalPage = `
  </form>
  `
 
-var cookieGenerator = securecookie.New(
-	securecookie.GenerateRandomKey(64),
-	securecookie.GenerateRandomKey(32))
-
+func InternalPageHandler(response http.ResponseWriter, request *http.Request) {
+	userName := getUserName(request)
+	if userName != "" {
+		fmt.Fprintf(response, internalPage, userName)
+	} else {
+		http.Redirect(response, request, "/", 302)
+	}
+}
 
 func LoginHandler(response http.ResponseWriter, request *http.Request) {
 	name := request.FormValue("name")
@@ -41,23 +51,21 @@ func LoginHandler(response http.ResponseWriter, request *http.Request) {
 	if name != "" && pass != "" {
 		// .. check credentials ..
 		setSession(name, response)
-		redirectTarget = "/templates/chat_view.html"
+		redirectTarget = "/internal"
 	}
 	http.Redirect(response, request, redirectTarget, 302)
 }
 
-//Expires the session
 func LogoutHandler(response http.ResponseWriter, request *http.Request) {
-	deleteSession(response)
+	clearSession(response)
 	http.Redirect(response, request, "/", 302)
 }
-
 
 func setSession(userName string, response http.ResponseWriter) {
 	value := map[string]string{
 		"name": userName,
 	}
-	if encoded, err := cookieGenerator.Encode("session", value); err == nil {
+	if encoded, err := cookieHandler.Encode("session", value); err == nil {
 		cookie := &http.Cookie{
 			Name:  "session",
 			Value: encoded,
@@ -67,7 +75,17 @@ func setSession(userName string, response http.ResponseWriter) {
 	}
 }
 
-func deleteSession(response http.ResponseWriter) {
+func getUserName(request *http.Request) (userName string) {
+	if cookie, err := request.Cookie("session"); err == nil {
+		cookieValue := make(map[string]string)
+		if err = cookieHandler.Decode("session", cookie.Value, &cookieValue); err == nil {
+			userName = cookieValue["name"]
+		}
+	}
+	return userName
+}
+
+func clearSession(response http.ResponseWriter) {
 	cookie := &http.Cookie{
 		Name:   "session",
 		Value:  "",
@@ -75,14 +93,4 @@ func deleteSession(response http.ResponseWriter) {
 		MaxAge: -1,
 	}
 	http.SetCookie(response, cookie)
-}
-
-func getUserName(request *http.Request) (userName string) {
-	if cookie, err := request.Cookie("session"); err == nil {
-		cookieValue := make(map[string]string)
-		if err = cookieGenerator.Decode("session", cookie.Value, &cookieValue); err == nil {
-			userName = cookieValue["name"]
-		}
-	}
-	return userName
 }
