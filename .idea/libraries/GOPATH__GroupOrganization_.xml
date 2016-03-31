@@ -51,6 +51,7 @@
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/ssh/testdata" />
       <root url="file://$PROJECT_DIR$/../../HubHtml/.idea" />
       <root url="file://$PROJECT_DIR$/../../smartystreets/assertions/.git" />
+      <root url="file://$PROJECT_DIR$/.git" />
       <root url="file://$PROJECT_DIR$/../../gorilla/websocket/.git" />
       <root url="file://$PROJECT_DIR$/../../codegangsta/negroni/.git" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/sha3/testdata" />

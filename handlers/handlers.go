@@ -1,12 +1,22 @@
 package handlers
 
-import "net/http"
+import (
+	"net/http"
+	"html/template"
 
-func loginHandler(w http.ResponseWriter, r *http.Request) {
+	"github.com/zacharyjacobcollins/GroupOrganization/models"
+)
 
+func renderTemplate(w http.ResponseWriter, tmpl string, ) {
+	t, _ := template.ParseFiles(tmpl + ".html")
+	t.Execute(w, _)
 }
 
-func chatHandler(w http.ResponseWriter, r *http.Request) {
+func LoginHandler(w http.ResponseWriter, r *http.Request, user string) {
+	renderTemplate(w, "/templates/chat_view")
+}
+
+func ChatHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
