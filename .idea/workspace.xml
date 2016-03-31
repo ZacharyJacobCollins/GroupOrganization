@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffbdbbdf-946b-48f7-8b78-9859a3f54358" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/handlers/loginHandlers.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/Login.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/utils/callback.go" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/GOPATH__GroupOrganization_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/GOPATH__GroupOrganization_.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/handlers.go" afterPath="$PROJECT_DIR$/handlers/handlers.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/loginHandlers.go" afterPath="$PROJECT_DIR$/handlers/loginHandlers.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <ignored path="GroupOrganization.iws" />
@@ -36,19 +33,31 @@
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+              <caret line="25" column="62" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="62" />
               <folding>
-                <element signature="e#14#195#0" expanded="true" />
+                <element signature="e#14#173#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginHandlers.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="handlers.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/handlers/handlers.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42211056">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#18#117#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginHandlers.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/loginHandlers.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7393617">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.181818">
+              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding>
                 <element signature="e#18#82#0" expanded="true" />
               </folding>
@@ -122,12 +131,12 @@
       <list>
         <option value="$PROJECT_DIR$/templates/chat_view.html" />
         <option value="$PROJECT_DIR$/models/structs.go" />
-        <option value="$PROJECT_DIR$/handlers/handlers.go" />
         <option value="$PROJECT_DIR$/html/login.html" />
         <option value="$PROJECT_DIR$/utils/callback.go" />
         <option value="$PROJECT_DIR$/utils/Login.txt" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/handlers/loginHandlers.go" />
+        <option value="$PROJECT_DIR$/handlers/handlers.go" />
       </list>
     </option>
   </component>
@@ -445,7 +454,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding>
-            <element signature="e#14#195#0" expanded="true" />
+            <element signature="e#14#173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -493,7 +502,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding>
-            <element signature="e#14#195#0" expanded="true" />
+            <element signature="e#14#173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -572,32 +581,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/handlers.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60301507">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#18#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+          <caret line="25" column="62" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="62" />
           <folding>
-            <element signature="e#14#195#0" expanded="true" />
+            <element signature="e#14#173#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/loginHandlers.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7393617">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.181818">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
             <element signature="e#18#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/handlers.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42211056">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#117#0" expanded="true" />
           </folding>
         </state>
       </provider>

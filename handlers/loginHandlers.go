@@ -49,7 +49,7 @@ func LoginHandler(response http.ResponseWriter, request *http.Request) {
 
 //Expires the session
 func LogoutHandler(response http.ResponseWriter, request *http.Request) {
-	clearSession(response)
+	deleteSession(response)
 	http.Redirect(response, request, "/", 302)
 }
 
