@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"fmt"
@@ -45,17 +45,6 @@ func InternalPageHandler(response http.ResponseWriter, request *http.Request) {
 	}
 }
 
-func LoginHandler(response http.ResponseWriter, request *http.Request) {
-	name := request.FormValue("name")
-	pass := request.FormValue("password")
-	redirectTarget := "/"
-	if name != "" && pass != "" {
-		// .. check credentials ..
-		setSession(name, response)
-		redirectTarget = "/internal"
-	}
-	http.Redirect(response, request, redirectTarget, 302)
-}
 
 func LogoutHandler(response http.ResponseWriter, request *http.Request) {
 	clearSession(response)
