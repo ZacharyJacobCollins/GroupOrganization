@@ -5,6 +5,8 @@ import (
 	"regexp"
 
 	"github.com/zacharyjacobcollins/GroupOrganization/handlers"
+	"github.com/zacharyjacobcollins/GroupOrganization/callback"
+	"github.com/gorilla/mux"
 )
 var validPath = regexp.MustCompile("^/(login|chat)/([a-zA-Z0-9]+)$")
 
@@ -20,9 +22,11 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func main() {
+	r := mux.NewRouter()
+	r.HandleFunc("/callback", callback.CallbackHandler)
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 	http.Handle("/",  http.FileServer(http.Dir("./html")))
-	http.HandleFunc("/login", handlers.LoginHandler)
-	http.HandleFunc("/test",  handlers.TestHandler)
+	r.HandleFunc("/login", handlers.LoginHandler)
+	r.HandleFunc("/test",  handlers.TestHandler)
 	http.ListenAndServe(":1337", nil)
 }
