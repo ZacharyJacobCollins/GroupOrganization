@@ -1,9 +1,10 @@
-package main
+package handlers
 
 import (
-	"fmt"
+	"log"
 	"github.com/gorilla/securecookie"
 	"net/http"
+	"log"
 )
 
 var cookieHandler = securecookie.New(
@@ -45,6 +46,7 @@ func InternalPageHandler(response http.ResponseWriter, request *http.Request) {
 }
 
 func LoginHandler(response http.ResponseWriter, request *http.Request) {
+	log.Print("FUCK")
 	name := request.FormValue("name")
 	pass := request.FormValue("password")
 	redirectTarget := "/"
