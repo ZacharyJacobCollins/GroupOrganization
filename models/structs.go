@@ -1,5 +1,5 @@
 package models
 
-type Person struct {
+type User struct {
 	UserName string
 }

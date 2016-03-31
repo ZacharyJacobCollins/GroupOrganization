@@ -7,17 +7,21 @@ import (
 	"github.com/zacharyjacobcollins/GroupOrganization/models"
 )
 
-func renderTemplate(w http.ResponseWriter, tmpl string, ) {
+//inject a user template
+func renderTemplate(w http.ResponseWriter, tmpl string, u models.User ) {
 	t, _ := template.ParseFiles(tmpl + ".html")
-	t.Execute(w, _)
+	t.Execute(w, u)
 }
 
-func LoginHandler(w http.ResponseWriter, r *http.Request, user string) {
-	renderTemplate(w, "/templates/chat_view")
+func LoginHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ChatHandler(w http.ResponseWriter, r *http.Request) {
 
+}
+
+func TestHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("<h1>HelloWorld</h1>"))
 }
 
 

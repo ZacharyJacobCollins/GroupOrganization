@@ -6,7 +6,6 @@ import (
 
 	"github.com/zacharyjacobcollins/GroupOrganization/handlers"
 )
-
 var validPath = regexp.MustCompile("^/(login|chat)/([a-zA-Z0-9]+)$")
 
 func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.HandlerFunc {
@@ -21,8 +20,9 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func main() {
-	// w := wiki.NewWiki();  w.Run();
-	http.Handle("/assets", http.StripPrefix("/", http.FileServer(http.Dir("/assets/"))))
-	http.HandleFunc("/login", makeHandler(handlers.LoginHandler))
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
+	http.Handle("/",  http.FileServer(http.Dir("./html")))
+	http.HandleFunc("/login", handlers.LoginHandler)
+	http.HandleFunc("/test",  handlers.TestHandler)
 	http.ListenAndServe(":1337", nil)
 }
