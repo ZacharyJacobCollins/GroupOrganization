@@ -1,3 +1,6 @@
+//TODO change get username to get user
+
+
 package handlers
 
 import (
@@ -38,7 +41,7 @@ func LoginHandler(response http.ResponseWriter, request *http.Request) {
 	if name != "" && pass != "" {
 		// .. check credentials ..
 		setSession(name, response)
-		redirectTarget = "/internal"
+		redirectTarget = "/templates/chat_view.html"
 	}
 	http.Redirect(response, request, redirectTarget, 302)
 }
@@ -49,15 +52,6 @@ func LogoutHandler(response http.ResponseWriter, request *http.Request) {
 	http.Redirect(response, request, "/", 302)
 }
 
-
-func RedirectPageHandler(response http.ResponseWriter, request *http.Request) {
-	userName := getUserName(request)
-	if userName != "" {
-		fmt.Fprintf(response, internalPage, userName)
-	} else {
-		http.Redirect(response, request, "/", 302)
-	}
-}
 
 func setSession(userName string, response http.ResponseWriter) {
 	value := map[string]string{
@@ -83,7 +77,6 @@ func deleteSession(response http.ResponseWriter) {
 	http.SetCookie(response, cookie)
 }
 
-//TODO change to get user
 func getUserName(request *http.Request) (userName string) {
 	if cookie, err := request.Cookie("session"); err == nil {
 		cookieValue := make(map[string]string)
