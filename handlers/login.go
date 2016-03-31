@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/securecookie"
 	"net/http"
 	"log"
+	"fmt"
 )
 
 var cookieHandler = securecookie.New(
