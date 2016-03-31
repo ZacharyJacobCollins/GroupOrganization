@@ -1,16 +1,15 @@
-package handlers
+package main
 
 import (
-	"log"
+	"fmt"
 	"github.com/gorilla/securecookie"
 	"net/http"
-	"log"
-	"fmt"
 )
 
 var cookieHandler = securecookie.New(
 	securecookie.GenerateRandomKey(64),
 	securecookie.GenerateRandomKey(32))
+
 
 
 const indexPage = `
@@ -24,7 +23,7 @@ const indexPage = `
  </form>
  `
 
-func indexPageHandler(response http.ResponseWriter, request *http.Request) {
+func IndexPageHandler(response http.ResponseWriter, request *http.Request) {
 	fmt.Fprintf(response, indexPage)
 }
 
@@ -47,7 +46,6 @@ func InternalPageHandler(response http.ResponseWriter, request *http.Request) {
 }
 
 func LoginHandler(response http.ResponseWriter, request *http.Request) {
-	log.Print("FUCK")
 	name := request.FormValue("name")
 	pass := request.FormValue("password")
 	redirectTarget := "/"
