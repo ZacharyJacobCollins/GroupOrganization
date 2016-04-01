@@ -8,7 +8,6 @@ type User struct {
 }
 
 type Organization struct {
-	Name string
-	Members []string
-	Color 	string
+	Name		string
+	HexColor 	string
 }
