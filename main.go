@@ -5,20 +5,9 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"net/http"
-	"github.com/ZacharyJacobCollins/GroupOrganization/handlers"
-	"github.com/ZacharyJacobCollins/GroupOrganization/login"
+	_ "github.com/ZacharyJacobCollins/GroupOrganization/core"
 )
 
-//Initialize Router
-func init() {
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-	r.HandleFunc("/home", handlers.IndexPageHandler)
-	r.Handle("/",  http.FileServer(http.Dir("./html")))
-	http.Handle("/", r)
-	http.ListenAndServe(":1337", nil)
-}
 
 //Global Variable for organization is set in structs
 func main() {

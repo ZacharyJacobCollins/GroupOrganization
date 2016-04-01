@@ -5,6 +5,11 @@ import (
 	"net/http"
 )
 
+func init() {
+	router.HandleFunc("/login", LoginHandler).Methods("POST")
+	router.HandleFunc("/logout", LogoutHandler).Methods("POST")
+}
+
 var cookieGenerator = securecookie.New(
 	securecookie.GenerateRandomKey(64),
 	securecookie.GenerateRandomKey(32))

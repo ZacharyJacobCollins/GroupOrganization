@@ -3,7 +3,6 @@ package handlers
 import (
 	"net/http"
 	"github.com/ZacharyJacobCollins/GroupOrganization/models"
-	"github.com/ZacharyJacobCollins/GroupOrganization/templates"
 )
 
 var GlobalOrganization = models.Organization{
@@ -14,8 +13,8 @@ var GlobalOrganization = models.Organization{
 }
 
 func IndexPageHandler(w http.ResponseWriter, request *http.Request) {
-	u := models.User{getUserName(request), "President", ""}
-	p := models.Page{u, GlobalOrganization}
-	templates.RenderPage(w, "home", p)
+	//u := models.User{getUserName(request), "President", ""}
+	//p := models.Page{u, GlobalOrganization}
+	//templates.RenderPage(w, "home", p)
 }
 
