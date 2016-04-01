@@ -1,19 +1,12 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gorilla/mux"
-	"github.com/ZacharyJacobCollins/GroupOrganization/handlers"
+	"github.com/ZacharyJacobCollins/GroupOrganization/structs"
 )
 
-func main() {
+var
 
-	var r = mux.NewRouter()
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-	r.Handle("/",  http.FileServer(http.Dir("./html")))
-	r.HandleFunc("/internal", handlers.InternalPageHandler)
-	r.HandleFunc("/login", handlers.LoginHandler).Methods("POST")
-	r.HandleFunc("/logout", handlers.LogoutHandler).Methods("POST")
-	http.Handle("/", r)
-	http.ListenAndServe(":1337", nil)
+func main() {
+	//Initialize Server
+	Serve()
 }

@@ -1,5 +1,14 @@
 package models
 
 type User struct {
-	UserName string
+	Name string
+	Password string
+	BlogPosts []string
+	Messages []string
+}
+
+type Organization struct {
+	Name string
+	Members []string
+	Color 	string
 }
