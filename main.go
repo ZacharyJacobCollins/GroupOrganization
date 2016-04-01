@@ -1,6 +1,6 @@
 //TODO User needs to be generated and fields filled in on login.
 //TODO on all renderings make sure name is capitalized.
-//TODO modularize everything
+//TODO modularize everything, change directories of templates.
 
 package main
 

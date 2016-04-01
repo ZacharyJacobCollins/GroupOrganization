@@ -4,11 +4,16 @@ All globals are in core.go
 
 Placings
 
-Core - models - modify for organization info
+Template, templates.go - modify for organization info
 
 packages
 
-Each package contains a file named after the package.  Ex.  package core -> core.go.  Init declares things that will be used in module.
+Each package contains a file named after the package.  Ex.  package core -> core.go.  Init in this file.
+Init should declare routes but doesn't yet.
+
+Handlers are all located in this file.
+
+Init declares things that will be used in module.
 Also usually a server and registered routes.
 
 
@@ -17,3 +22,6 @@ Wiki
 
 Chat
     Consists of Controller > Hubs > Connections
+
+
+TODO core needs to be broken up

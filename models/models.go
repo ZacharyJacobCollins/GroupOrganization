@@ -18,4 +18,3 @@ type Organization struct {
 	Favicon		string
 	HexColor 	string
 }
-

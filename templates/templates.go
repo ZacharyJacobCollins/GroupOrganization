@@ -2,18 +2,22 @@ package templates
 
 import (
 	"html/template"
-	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 	"net/http"
+	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 )
 
-
-
-func RenderPage(w http.ResponseWriter, templ string, p models.Page) {
-	t := template.Must(template.ParseFiles("templates/"+ templ +".html"))
-	t.Execute(w, p)
+//TODO needs to be global in core.
+var GlobalOrganization = models.Organization{
+	"Eastern Acm",
+	"Acm",
+	"https://netid.emich.edu/cas/favicon.ico",
+	"#000046",
 }
 
-func RenderAll(w http.ResponseWriter, p models.Page) {
-	all := template.Must(template.ParseGlob("/templates"))
-	all.Execute(w, p)
+//username being passed in via LoginHandler.  Renders all templates server side.
+func RenderAll(w http.ResponseWriter, username string) {
+	u := models.User{username, "President", ""}
+	p := models.Page{u, GlobalOrganization}
+	t := template.Must(template.ParseFiles("templates/home.html", "templates/chat_view.html"))
+	t.Execute(w, p)
 }
