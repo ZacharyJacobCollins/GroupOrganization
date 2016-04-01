@@ -31,7 +31,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            <img alt="image" class="img-circle" src="{{.U.Picture}}" width="90px" height="90px" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{.U.Name}}</strong>
@@ -52,37 +52,13 @@
                         <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Home</span></a>
                     </li>
                     <li>
-                        <a href="off_canvas_menu.html"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Blog</span></a>
+                        <a href="wiki.html"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Wiki</span></a>
                     </li>
                     <li>
-                        <a href="chat_view.html"><i class="fa fa-comment-o"></i> <span class="nav-label">Discuss</span></a>
+                        <a href="blog.html"><i class="fa fa-pencil-square-o"></i> <span class="nav-label">Blog</span></a>
                     </li>
                     <li>
-                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Meetup</span>  </a>
-                    </li>
-                    <li>
-                        <a href="widgets.html"><i class="fa fa-thumbs-o-up"></i> <span class="nav-label">Social</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-github-square"></i> <span class="nav-label">Projects</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="graph_flot.html">Flot Charts</a></li>
-                            <li><a href="graph_morris.html">Morris.js Charts</a></li>
-                            <li><a href="graph_rickshaw.html">Rickshaw Charts</a></li>
-                            <li><a href="graph_chartjs.html">Chart.js</a></li>
-                            <li><a href="graph_chartist.html">Chartist</a></li>
-                            <li><a href="c3.html">c3 charts</a></li>
-                            <li><a href="graph_peity.html">Peity Charts</a></li>
-                            <li><a href="graph_sparkline.html">Sparkline Charts</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="search_results.html">Search results</a></li>
-                            <li><a href="lockscreen.html">Lockscreen</a></li>
-                            <li><a href="register.html">Invite a Member</a></li>
-                        </ul>
+                        <a href="/0.html"><i class="fa fa-comment-o"></i> <span class="nav-label">Discuss</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
@@ -233,7 +209,7 @@
 
                     <div class="col-sm-3">
                         <h2>Welcome {{.U.Name}}</h2>
-                        <small>You, {{.U.Name}} are the supreme ruler, czar, leader.</small>
+                        <small>You, {{.U.Name}} you're awesome!.</small>
                         <ul class="list-group clear-list m-t">
                             <li class="list-group-item fist-item">
                                 <span class="pull-right">
@@ -649,11 +625,8 @@
                         </div>
                 </div>
                 <div class="footer">
-                    <div class="pull-right">
-                        10GB of <strong>250GB</strong> Free.
-                    </div>
                     <div>
-                        <strong>Copyright</strong> Example Company &copy; 2014-2015
+                        <strong>Eastern | {{.Initials}} &copy; 2016 </strong>
                     </div>
                 </div>
             </div>

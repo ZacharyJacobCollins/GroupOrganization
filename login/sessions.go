@@ -1,20 +1,23 @@
 package login
 
-import "net/http"
+import (
+	"net/http"
+	"github.com/ZacharyJacobCollins/GroupOrganization/models"
+)
 
-func getUserName(request *http.Request) (userName string) {
+func getUser(request *http.Request) (user models.User) {
 	if cookie, err := request.Cookie("session"); err == nil {
-		cookieValue := make(map[string]string)
+		cookieValue := make(map[string]models.User)
 		if err = cookieGenerator.Decode("session", cookie.Value, &cookieValue); err == nil {
-			userName = cookieValue["name"]
+			user = cookieValue["name"]
 		}
 	}
-	return userName
+	return user
 }
 
-func setSession(userName string, response http.ResponseWriter) {
-	value := map[string]string{
-		"name": userName,
+func setSession(user models.User, response http.ResponseWriter) {
+	value := map[string]models.User{
+		"user": user,
 	}
 	if encoded, err := cookieGenerator.Encode("session", value); err == nil {
 		cookie := &http.Cookie{

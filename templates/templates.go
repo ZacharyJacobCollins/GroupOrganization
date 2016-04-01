@@ -4,7 +4,6 @@ import (
 	"html/template"
 	"net/http"
 	"github.com/ZacharyJacobCollins/GroupOrganization/models"
-
 )
 
 func RenderPage(w http.ResponseWriter, templ string) {
@@ -13,8 +12,7 @@ func RenderPage(w http.ResponseWriter, templ string) {
 }
 
 //Renders all templates server side.  Called after auth.
-func RenderAll(w http.ResponseWriter, username string) {
-	u := models.User{username, "President", ""}
+func RenderAll(w http.ResponseWriter, u models.User) {
 	p := models.Page{u, models.GlobalOrganization}
 	t := template.Must(template.ParseFiles(
 		"templates/home.html",
