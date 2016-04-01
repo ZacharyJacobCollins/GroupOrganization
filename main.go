@@ -4,8 +4,8 @@ import (
 	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 )
 
-//Global Variable for organization
-var Organization = structs.Organization{"Eastern Acm", "#000046"}
+//Global Variable for organization regarding
+var Organization = models.Organization{"Eastern Acm", ""}
 
 func main() {
 	//Initialize Server
