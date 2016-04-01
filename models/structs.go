@@ -1,20 +1,21 @@
 package models
 
-
-
 type Page struct {
 	U		User
 	O		Organization
 }
 
 type User struct {
-	Name string
-	Password string
+	Name 		string
+	Position 	string
+	Password 	string
 }
 
 type Organization struct {
 	Name		string
-	//used in logo etc.
-	Shortname 	string
+	//Kept to 3 characters
+	Initials 	string
+	Favicon		string
 	HexColor 	string
 }
+

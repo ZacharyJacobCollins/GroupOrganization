@@ -1,6 +1,4 @@
-//create a render template here.  inject username and shtuff.  
-
-package handlers
+package login
 
 import (
 	"github.com/gorilla/securecookie"
