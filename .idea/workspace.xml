@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffbdbbdf-946b-48f7-8b78-9859a3f54358" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/loginHandlers.go" afterPath="$PROJECT_DIR$/handlers/loginHandlers.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <ignored path="GroupOrganization.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,9 +32,11 @@
           <file leaf-file-name="loginHandlers.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/handlers/loginHandlers.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.16100179">
-                  <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-                  <folding />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="63" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
+                  <folding>
+                    <element signature="e#83#147#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -466,7 +464,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#83#147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -676,9 +676,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/handlers/loginHandlers.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16100179">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="63" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
+          <folding>
+            <element signature="e#83#147#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

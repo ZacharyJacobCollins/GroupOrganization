@@ -1,3 +1,5 @@
+//create a render template here.  inject username and shtuff.  
+
 package handlers
 
 import (
