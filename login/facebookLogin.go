@@ -7,7 +7,7 @@ import (
 	"strings"
 	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 	"log"
-"github.com/ZacharyJacobCollins/GroupOrganization/templates"
+	"github.com/ZacharyJacobCollins/GroupOrganization/templates"
 )
 
 func readHttpBody(response *http.Response) string {
@@ -58,14 +58,15 @@ func FBLoginHandler(w http.ResponseWriter, r *http.Request){
 	}
 	str := readHttpBody(response)
 	user, _ := jason.NewObjectFromBytes([]byte(str))
+	log.Print(user)
 	//email, _ := user.GetString("email")
 	//bday, _ := user.GetString("birthday")
-	fbusername, _ := user.GetString("username")
 	id, _ := user.GetString("id")
+	name, _ := user.GetString("name")
 	img := "https://graph.facebook.com/" + id + "/picture?width=90&height=90"
 
 	//this junk returns the user and stuff.
-	u := GetFacebookUser(fbusername, "", img, "")
+	u := GetFacebookUser(name, "", img, "")
 	log.Print(u.Name+" "+u.Picture)
 	templates.RenderAll(w, u)
 	http.Redirect(w, r, "/templates/home.html", 302)

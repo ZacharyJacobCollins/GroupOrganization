@@ -41,12 +41,13 @@ func CreateUser(username string, position string, pictureUrl string, password st
 		position = "President"
 	}
 	if (pictureUrl == "") {
-		pictureUrl = "http://orig00.deviantart.net/9b6c/f/2013/124/2/0/arch_linux_logo_by_nintenmario-d6419p8.png"
+		pictureUrl = "http://www.yardbarker.com/uploads/logo/image/1999/ncaa_eastern_michigan_150x150.jpg"
 	}
 	if (password == "") {
 		password = "test"
 	}
-	return User{username, position, pictureUrl, password}
+
+	return User{username, position, pictureUrl, password, ""}
 }
 
 type Page struct {
@@ -59,6 +60,7 @@ type User struct {
 	Position 		string
 	Picture			string
 	Password 		string
+	Host 			string
 }
 
 type Organization struct {

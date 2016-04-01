@@ -16,7 +16,6 @@ func RenderAll(w http.ResponseWriter, u models.User) {
 	p := models.Page{u, models.GlobalOrganization}
 	t := template.Must(template.ParseFiles(
 		"templates/home.html",
-		"templates/chat_view.html",
 	))
 	t.Execute(w, p)
 }

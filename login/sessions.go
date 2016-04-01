@@ -5,7 +5,7 @@ import (
 	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 )
 
-func getUser(request *http.Request) (user models.User) {
+func GetUser(request *http.Request) (user models.User) {
 	if cookie, err := request.Cookie("session"); err == nil {
 		cookieValue := make(map[string]models.User)
 		if err = cookieGenerator.Decode("session", cookie.Value, &cookieValue); err == nil {

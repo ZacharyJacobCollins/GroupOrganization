@@ -10,12 +10,15 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	"github.com/ZacharyJacobCollins/GroupOrganization/login"
+	"github.com/ZacharyJacobCollins/GroupOrganization/chat"
 )
 
 func init() {
+	//Initialize and run chat module.
+	c := chat.NewChat();  c.Run(3);
+
 	//frontend assets
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-
 	r := mux.NewRouter()
 
 	//login routes
