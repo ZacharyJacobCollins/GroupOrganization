@@ -7,12 +7,13 @@ import (
 )
 
 func main() {
+
 	var r = mux.NewRouter()
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
-	http.Handle("/",  http.FileServer(http.Dir("./html")))
-	
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
+	r.Handle("/",  http.FileServer(http.Dir("./html")))
 	r.HandleFunc("/internal", handlers.InternalPageHandler)
 	r.HandleFunc("/login", handlers.LoginHandler).Methods("POST")
 	r.HandleFunc("/logout", handlers.LogoutHandler).Methods("POST")
-	http.ListenAndServe(":1337", r)
+	http.Handle("/", r)
+	http.ListenAndServe(":1337", nil)
 }
