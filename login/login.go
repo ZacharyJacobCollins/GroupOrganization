@@ -3,6 +3,7 @@ package login
 import (
 	"github.com/gorilla/securecookie"
 	"net/http"
+
 	"github.com/ZacharyJacobCollins/GroupOrganization/templates"
 )
 
@@ -10,8 +11,13 @@ var cookieGenerator = securecookie.New(
 	securecookie.GenerateRandomKey(64),
 	securecookie.GenerateRandomKey(32))
 
-//Index.html is the login for now.
+
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
+	templates.RenderPage(w, "login")
+}
+
+//Index.html is the login for now.
+func AuthHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("name")
 	pass := r.FormValue("password")
 	redirectTarget := "/"
