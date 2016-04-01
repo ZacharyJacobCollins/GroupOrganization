@@ -1,5 +1,7 @@
 package models
 
+
+
 type Page struct {
 	U		User
 	O		Organization
@@ -8,8 +10,6 @@ type Page struct {
 type User struct {
 	Name string
 	Password string
-	BlogPosts []string
-	Messages []string
 }
 
 type Organization struct {

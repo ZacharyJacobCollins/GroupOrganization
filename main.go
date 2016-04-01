@@ -3,15 +3,12 @@
 package main
 
 import (
-	"github.com/ZacharyJacobCollins/GroupOrganization/models"
 	"github.com/gorilla/mux"
 	"net/http"
 	"github.com/ZacharyJacobCollins/GroupOrganization/handlers"
 )
 
-//Global Variable for organization.  Never changes.
-const GlobalOrganization = models.Organization{"Eastern Acm", "Acm", "#000046"}
-
+//Global Variable for organization is set in structs
 
 func main() {
 	var r = mux.NewRouter()

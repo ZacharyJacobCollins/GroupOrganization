@@ -3,7 +3,6 @@
 package handlers
 
 import (
-	"fmt"
 	"github.com/gorilla/securecookie"
 	"net/http"
 )
